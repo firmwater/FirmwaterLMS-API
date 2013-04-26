@@ -8,7 +8,7 @@ All documented endpoints are relative to a base HTTPS URL. The default base URL 
 
     https://lms.firmwater.com/api
 
-Organizations with custom domains will have a similar base URL using their custom domain. For instance, an organization with the domain `lms.example.com` would use the following base URL:
+Organizations with custom domains will have a similar base URL using their custom domain. For instance, an organization with the domain `example.com` would use the following base URL:
 
     https://example.com/api
 
