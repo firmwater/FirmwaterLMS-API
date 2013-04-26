@@ -18,7 +18,7 @@ At the moment, the API can only be accessed via a browser while logged into Firm
 
 ### Making Requests
 
-The API relies on content negotiation to determine the send/receive formats and the expected API version. Currently, all client requests should include the `Accept: application/vnd.firmwater+json` header. The API will always respond with a `Content-Type: application/json` header.
+The API relies on content negotiation to determine the send/receive formats and the expected API version. Currently, all client requests should include the `Accept: application/vnd.firmwater+json` header. The API will always respond with a `Content-Type: application/xml; charset=utf-8 ` header.
 
 # API Reference
 
@@ -26,7 +26,7 @@ A number of APIs are exposed for different resources. This section describes ava
 
 # Current User API
 
-The current user API will access to resources corresponding to the currently authenticated user. It is a convenient way of accessing similar resources exposed by the Users API except for the currently logged in user.
+The current user API will provide access to resources corresponding to the currently authenticated user. It is a convenient way of accessing similar resources exposed by the users API except with regards to the currently logged in user.
 
 ## Get the authenticated user
 
@@ -92,7 +92,7 @@ Status: 200 OK
 
 # Users API
 
-The users API will provide access resources corresponding to users.
+The users API will provide access to resources corresponding to users.
 
 ## Get a single user
 
