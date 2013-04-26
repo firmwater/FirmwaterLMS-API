@@ -60,7 +60,7 @@ The users API will provide access resources corresponding to users.
 
 ## Get a single user
 
-    GET /{client_id}/users/{user_id}
+    GET /{clientId}/users/{userId}
 
 ### Response
 
