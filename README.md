@@ -18,7 +18,7 @@ At the moment, the API can only be accessed via a browser while logged into Firm
 
 ### Making Requests
 
-The API relies on content negotiation to determine the send/receive formats and the expected API version. Currently, all client requests should include the `Accept: application/vnd.firmwater+json` header. The API will always respond with a `Content-Type: application/xml; charset=utf-8 ` header.
+The API relies on content negotiation to determine the send/receive formats and the expected API version. Currently, all client requests should include the `Accept: application/vnd.firmwater+json` header. The API will always respond with a `Content-Type: application/json; charset=utf-8 ` header.
 
 # API Reference
 
