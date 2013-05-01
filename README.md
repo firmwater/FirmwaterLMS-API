@@ -66,27 +66,28 @@ Status: 200 OK
 {
   "id": "0bbbbbbb-d9cb-469f-a165-70867728950e",
   "user": {
-	  "id": "0f8fad5b-d9cb-469f-a165-70867728950e",
-	  "clientId": "firmwater",
-	  "username": "mpareja@firmwater.com",
-	  "firstName": "Mario",
-	  "middleName": "",
-	  "lastName": "Pareja",
-	  "emailAddress": "mpareja@firmwater.com",
-	  "preferredLanguage": "en",
-	  "externalId": "id_from_other_system",
-	  "photoUrl": "https://lms.firmwater.com/lms/licensees/firmwater/photos/g6/sdjads-123.png",
-	  "expiryDateTime": "2014-01-14T04:33:35Z",
-	  "residencePhone": null,
-	  "businessPhone": null,
-	  "mobilePhone": null
+    "id": "0f8fad5b-d9cb-469f-a165-70867728950e",
+    "clientId": "firmwater",
+    "username": "mpareja@firmwater.com",
+    "firstName": "Mario",
+    "middleName": "",
+    "lastName": "Pareja",
+    "emailAddress": "mpareja@firmwater.com",
+    "preferredLanguage": "en",
+    "externalId": "id_from_other_system",
+    "photoUrl": "https://lms.firmwater.com/lms/licensees/firmwater/photos/g6/sdjads-123.png",
+    "residencePhone": null,
+    "businessPhone": null,
+    "mobilePhone": null,
+    "dateOfBirth": null,
+    "expiryDateTime": "2014-01-14T04:33:35Z",
   },
   "item": {
-	"id": "0ddddddd-d9cb-469f-a165-70867728950e",
-	"externalId": "intro"
+    "id": "0ddddddd-d9cb-469f-a165-70867728950e",
+    "externalId": "intro"
   },
   "attempt": {
-	"id": "0eeeeeee-d9cb-469f-a165-70867728950e"
+    "id": "0eeeeeee-d9cb-469f-a165-70867728950e"
   }
 }
 ```
