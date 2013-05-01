@@ -47,10 +47,11 @@ Status: 200 OK
   "preferredLanguage": "en",
   "externalId": "id_from_other_system",
   "photoUrl": "https://lms.firmwater.com/lms/licensees/firmwater/photos/g6/sdjads-123.png",
-  "expiryDateTime": "2014-01-14T04:33:35Z",
   "residencePhone": null,
   "businessPhone": null,
-  "mobilePhone": null
+  "mobilePhone": null,
+  "dateOfBirth": null,
+  "expiryDateTime": "2014-01-14T04:33:35Z",
 }
 
 ```
