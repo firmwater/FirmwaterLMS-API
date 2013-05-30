@@ -34,7 +34,7 @@ The current user API will provide access to resources corresponding to the curre
 
 ### Response
 
-```
+```javascript
 Status: 200 OK
 {
   "id": "0f8fad5b-d9cb-469f-a165-70867728950e",
@@ -53,15 +53,15 @@ Status: 200 OK
   "dateOfBirth": null,
   "expiryDateTime": "2014-01-14T04:33:35Z",
 }
-
 ```
+
 ## Get training session information for the authenticated user
 
     GET /user/training/sessions/{trainingSessionId}
 
 ### Response
 
-```
+```javascript
 Status: 200 OK
 {
   "id": "0bbbbbbb-d9cb-469f-a165-70867728950e",
@@ -92,6 +92,116 @@ Status: 200 OK
 }
 ```
 
+## Retrieve notices to be delivered to the authenticated user
+
+    GET /user/notices
+
+### Response
+
+```javascript
+Status: 200 OK
+[
+  {
+    "id":"e835c4df-7bac-442e-ba91-17f4593dffed",
+    "type":"OneTime",
+    "message":"<blink>This blinking message will be shown once.</blink>",
+    "cssClass":"warning",
+    "user": {
+      "id": "ae5d8b42-0110-47d6-9ad9-60f4956c12ec"
+    }
+  },
+  {
+    "id":"f835c4df-7bac-442e-ba91-17f4593dffed",
+    "type":"Persistent",
+    "message":"This message will be shown until the user dismisses it.",
+    "cssClass":"warning",
+    "user": {
+      "id": "ae5d8b42-0110-47d6-9ad9-60f4956c12ec"
+    }
+  }
+]
+```
+
+## Dismiss a notice delivered to the authenticated user
+
+    DELETE /user/notices/{noticeId}
+
+### Response
+
+```javascript
+Status: 204 No Content
+```
+
+# In App Notice API
+
+The in app notice API will provide access to resources for communicating with users via the LMS user interface.
+
+## Retrieve notices to be delivered to a user
+
+    GET /{clientId}/notices/users/{userId}
+
+### Response
+
+```javascript
+Status: 200 OK
+[
+  {
+    "id":"e835c4df-7bac-442e-ba91-17f4593dffed",
+    "type":"OneTime",
+    "message":"<blink>This blinking message will be shown once.</blink>",
+    "cssClass":"warning",
+    "user": {
+      "id": "ae5d8b42-0110-47d6-9ad9-60f4956c12ec"
+    }
+  },
+  {
+    "id":"f835c4df-7bac-442e-ba91-17f4593dffed",
+    "type":"Persistent",
+    "message":"This message will be shown until the user dismisses it.",
+    "cssClass":"warning",
+    "user": {
+      "id": "ae5d8b42-0110-47d6-9ad9-60f4956c12ec"
+    }
+  }
+]
+```
+
+## Queue a notice to be delivered to a user
+
+    POST /{clientId}/notices/users/{userId}
+
+```javascript
+{
+  "type":"OneTime",
+  "messageText":"This is a <a>test</a> OneTime notice.",
+  "cssClass":"warning"
+}
+```
+
+### Response
+
+```javascript
+{
+  "id":"e835c4df-7bac-442e-ba91-17f4593dffed",
+  "type":"OneTime",
+  "message":"This is a &lt;a&gt;test&lt;/a&gt; OneTime notice.",
+  "cssClass":"warning"
+  "user": {
+    "id": "ae5d8b42-0110-47d6-9ad9-60f4956c12ec"
+  }
+}
+```
+
+## Dismiss a notice to be delivered to a user
+
+    DELETE /{clientId}/notices/users/{noticeId}
+
+### Response
+
+```javascript
+Status: 204 No Content
+```
+
 # Users API
 
 The users API will provide access to resources corresponding to users.
@@ -102,7 +212,7 @@ The users API will provide access to resources corresponding to users.
 
 ### Response
 
-```
+```javascript
 Status: 200 OK
 {
   "id": "0f8fad5b-d9cb-469f-a165-70867728950e",
