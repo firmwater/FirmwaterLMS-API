@@ -34,7 +34,7 @@ The current user API will provide access to resources corresponding to the curre
 
 ### Response
 
-```javascript
+```
 Status: 200 OK
 {
   "id": "0f8fad5b-d9cb-469f-a165-70867728950e",
@@ -61,7 +61,7 @@ Status: 200 OK
 
 ### Response
 
-```javascript
+```
 Status: 200 OK
 {
   "id": "0bbbbbbb-d9cb-469f-a165-70867728950e",
@@ -98,7 +98,7 @@ Status: 200 OK
 
 ### Response
 
-```javascript
+```
 Status: 200 OK
 [
   {
@@ -128,7 +128,7 @@ Status: 200 OK
 
 ### Response
 
-```javascript
+```
 Status: 204 No Content
 ```
 
@@ -142,7 +142,7 @@ The in app notice API will provide access to resources for communicating with us
 
 ### Response
 
-```javascript
+```
 Status: 200 OK
 [
   {
@@ -170,7 +170,7 @@ Status: 200 OK
 
     POST /{clientId}/notices/users/{userId}
 
-```javascript
+```
 {
   "type":"OneTime",
   "messageText":"This is a <a>test</a> OneTime notice.",
@@ -180,7 +180,7 @@ Status: 200 OK
 
 ### Response
 
-```javascript
+```
 {
   "id":"e835c4df-7bac-442e-ba91-17f4593dffed",
   "type":"OneTime",
@@ -198,7 +198,7 @@ Status: 200 OK
 
 ### Response
 
-```javascript
+```
 Status: 204 No Content
 ```
 
@@ -212,7 +212,7 @@ The users API will provide access to resources corresponding to users.
 
 ### Response
 
-```javascript
+```
 Status: 200 OK
 {
   "id": "0f8fad5b-d9cb-469f-a165-70867728950e",
