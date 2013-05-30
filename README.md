@@ -26,7 +26,7 @@ A number of APIs are exposed for different resources. This section describes ava
 
 # Current User API
 
-The current user API will provide access to resources corresponding to the currently authenticated user. It is a convenient way of accessing similar resources exposed by the users API except with regards to the currently logged in user.
+The current user API will provide access to resources corresponding to the currently authenticated user. It is a convenient way of accessing many of the resources exposed by the users API for the currently logged in user.
 
 ## Get the authenticated user
 
