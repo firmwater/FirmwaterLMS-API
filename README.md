@@ -226,6 +226,7 @@ Status: 200 OK
   "emailAddress": "mpareja@firmwater.com",
   "preferredLanguage": "en",
   "externalId": "id_from_other_system",
+  "photoUrl": "https://lms.firmwater.com/lms/licensees/firmwater/photos/g6/123_kl3jk2kj.png",
   "photoThumbnailUrl": "https://lms.firmwater.com/lms/licensees/firmwater/photos/g6/123_thumb_kl3jk2kj.png.jpg",
   "expiryDateTime": "2014-01-14T04:33:35Z",
   "residencePhone": null,
