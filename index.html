@@ -1,41 +1,84 @@
-# Firmwater LMS API
+<!DOCTYPE html>
+<html>
 
-This is the API for Firmwater LMS (lms.firmwater.com). It is a REST-style API that uses JSON serialization and requires HTTPS access.
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Firmwaterlms-api : Documentation and sample code for the REST-style Firmwater LMS API.">
 
-### Base URL
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
-All documented endpoints are relative to a base HTTPS URL. The default base URL is:
+    <title>Firmwaterlms-api</title>
+  </head>
 
-    https://lms.firmwater.com/api
+  <body>
 
-Organizations with custom domains will have a similar base URL using their custom domain. For instance, an organization with the domain `example.com` would use the following base URL:
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/firmwater/FirmwaterLMS-API">View on GitHub</a>
 
-    https://example.com/api
+          <h1 id="project_title">Firmwaterlms-api</h1>
+          <h2 id="project_tagline">Documentation and sample code for the REST-style Firmwater LMS API.</h2>
 
-### Authentication
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/firmwater/FirmwaterLMS-API/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/firmwater/FirmwaterLMS-API/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
 
-At the moment, the API can only be accessed via a browser while logged into Firmwater LMS.
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a id="firmwater-lms-api" class="anchor" href="#firmwater-lms-api" aria-hidden="true"><span class="octicon octicon-link"></span></a>Firmwater LMS API</h1>
 
-### Making Requests
+<p>This is the API for Firmwater LMS (lms.firmwater.com). It is a REST-style API that uses JSON serialization and requires HTTPS access.</p>
 
-The API relies on content negotiation to determine the send/receive formats and the expected API version. Currently, all client requests should include the `Accept: application/vnd.firmwater+json` header. The API will always respond with a `Content-Type: application/json; charset=utf-8 ` header.
+<h3>
+<a id="base-url" class="anchor" href="#base-url" aria-hidden="true"><span class="octicon octicon-link"></span></a>Base URL</h3>
 
-# API Reference
+<p>All documented endpoints are relative to a base HTTPS URL. The default base URL is:</p>
 
-A number of APIs are exposed for different resources. This section describes available APIs.
+<pre><code>https://lms.firmwater.com/api
+</code></pre>
 
-# Current User API
+<p>Organizations with custom domains will have a similar base URL using their custom domain. For instance, an organization with the domain <code>example.com</code> would use the following base URL:</p>
 
-The current user API will provide access to resources corresponding to the currently authenticated user. It is a convenient way of accessing many of the resources exposed by the users API for the currently logged in user.
+<pre><code>https://example.com/api
+</code></pre>
 
-## Get the authenticated user
+<h3>
+<a id="authentication" class="anchor" href="#authentication" aria-hidden="true"><span class="octicon octicon-link"></span></a>Authentication</h3>
 
-    GET /user
+<p>At the moment, the API can only be accessed via a browser while logged into Firmwater LMS.</p>
 
-### Response
+<h3>
+<a id="making-requests" class="anchor" href="#making-requests" aria-hidden="true"><span class="octicon octicon-link"></span></a>Making Requests</h3>
 
-```
-Status: 200 OK
+<p>The API relies on content negotiation to determine the send/receive formats and the expected API version. Currently, all client requests should include the <code>Accept: application/vnd.firmwater+json</code> header. The API will always respond with a <code>Content-Type: application/json; charset=utf-8</code> header.</p>
+
+<h1>
+<a id="api-reference" class="anchor" href="#api-reference" aria-hidden="true"><span class="octicon octicon-link"></span></a>API Reference</h1>
+
+<p>A number of APIs are exposed for different resources. This section describes available APIs.</p>
+
+<h1>
+<a id="current-user-api" class="anchor" href="#current-user-api" aria-hidden="true"><span class="octicon octicon-link"></span></a>Current User API</h1>
+
+<p>The current user API will provide access to resources corresponding to the currently authenticated user. It is a convenient way of accessing many of the resources exposed by the users API for the currently logged in user.</p>
+
+<h2>
+<a id="get-the-authenticated-user" class="anchor" href="#get-the-authenticated-user" aria-hidden="true"><span class="octicon octicon-link"></span></a>Get the authenticated user</h2>
+
+<pre><code>GET /user
+</code></pre>
+
+<h3>
+<a id="response" class="anchor" href="#response" aria-hidden="true"><span class="octicon octicon-link"></span></a>Response</h3>
+
+<pre><code>Status: 200 OK
 {
   "id": "0f8fad5b-d9cb-469f-a165-70867728950e",
   "clientId": "firmwater",
@@ -60,16 +103,18 @@ Status: 200 OK
   "dateOfBirth": null,
   "expiryDateTime": "2014-01-14T04:33:35",
 }
-```
+</code></pre>
 
-## Get training session information for the authenticated user
+<h2>
+<a id="get-training-session-information-for-the-authenticated-user" class="anchor" href="#get-training-session-information-for-the-authenticated-user" aria-hidden="true"><span class="octicon octicon-link"></span></a>Get training session information for the authenticated user</h2>
 
-    GET /user/training/sessions/{trainingSessionId}
+<pre><code>GET /user/training/sessions/{trainingSessionId}
+</code></pre>
 
-### Response
+<h3>
+<a id="response-1" class="anchor" href="#response-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Response</h3>
 
-```
-Status: 200 OK
+<pre><code>Status: 200 OK
 {
   "id": "0bbbbbbb-d9cb-469f-a165-70867728950e",
   "user": {
@@ -104,21 +149,23 @@ Status: 200 OK
     "id": "0eeeeeee-d9cb-469f-a165-70867728950e"
   }
 }
-```
+</code></pre>
 
-## Retrieve notices to be delivered to the authenticated user
+<h2>
+<a id="retrieve-notices-to-be-delivered-to-the-authenticated-user" class="anchor" href="#retrieve-notices-to-be-delivered-to-the-authenticated-user" aria-hidden="true"><span class="octicon octicon-link"></span></a>Retrieve notices to be delivered to the authenticated user</h2>
 
-    GET /user/notices
+<pre><code>GET /user/notices
+</code></pre>
 
-### Response
+<h3>
+<a id="response-2" class="anchor" href="#response-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Response</h3>
 
-```
-Status: 200 OK
+<pre><code>Status: 200 OK
 [
   {
     "id":"e835c4df-7bac-442e-ba91-17f4593dffed",
     "type":"OneTime",
-    "message":"<blink>This blinking message will be shown once.</blink>",
+    "message":"&lt;blink&gt;This blinking message will be shown once.&lt;/blink&gt;",
     "cssClass":"warning",
     "user": {
       "id": "ae5d8b42-0110-47d6-9ad9-60f4956c12ec"
@@ -134,35 +181,40 @@ Status: 200 OK
     }
   }
 ]
-```
+</code></pre>
 
-## Dismiss a notice delivered to the authenticated user
+<h2>
+<a id="dismiss-a-notice-delivered-to-the-authenticated-user" class="anchor" href="#dismiss-a-notice-delivered-to-the-authenticated-user" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dismiss a notice delivered to the authenticated user</h2>
 
-    DELETE /user/notices/{noticeId}
+<pre><code>DELETE /user/notices/{noticeId}
+</code></pre>
 
-### Response
+<h3>
+<a id="response-3" class="anchor" href="#response-3" aria-hidden="true"><span class="octicon octicon-link"></span></a>Response</h3>
 
-```
-Status: 204 No Content
-```
+<pre><code>Status: 204 No Content
+</code></pre>
 
-# In App Notice API
+<h1>
+<a id="in-app-notice-api" class="anchor" href="#in-app-notice-api" aria-hidden="true"><span class="octicon octicon-link"></span></a>In App Notice API</h1>
 
-The in app notice API will provide access to resources for communicating with users via the LMS user interface.
+<p>The in app notice API will provide access to resources for communicating with users via the LMS user interface.</p>
 
-## Retrieve notices to be delivered to a user
+<h2>
+<a id="retrieve-notices-to-be-delivered-to-a-user" class="anchor" href="#retrieve-notices-to-be-delivered-to-a-user" aria-hidden="true"><span class="octicon octicon-link"></span></a>Retrieve notices to be delivered to a user</h2>
 
-    GET /{clientId}/notices/users/{userId}
+<pre><code>GET /{clientId}/notices/users/{userId}
+</code></pre>
 
-### Response
+<h3>
+<a id="response-4" class="anchor" href="#response-4" aria-hidden="true"><span class="octicon octicon-link"></span></a>Response</h3>
 
-```
-Status: 200 OK
+<pre><code>Status: 200 OK
 [
   {
     "id":"e835c4df-7bac-442e-ba91-17f4593dffed",
     "type":"OneTime",
-    "message":"<blink>This blinking message will be shown once.</blink>",
+    "message":"&lt;blink&gt;This blinking message will be shown once.&lt;/blink&gt;",
     "cssClass":"warning",
     "user": {
       "id": "ae5d8b42-0110-47d6-9ad9-60f4956c12ec"
@@ -178,56 +230,62 @@ Status: 200 OK
     }
   }
 ]
-```
+</code></pre>
 
-## Queue a notice to be delivered to a user
+<h2>
+<a id="queue-a-notice-to-be-delivered-to-a-user" class="anchor" href="#queue-a-notice-to-be-delivered-to-a-user" aria-hidden="true"><span class="octicon octicon-link"></span></a>Queue a notice to be delivered to a user</h2>
 
-    POST /{clientId}/notices/users/{userId}
+<pre><code>POST /{clientId}/notices/users/{userId}
+</code></pre>
 
-```
-{
+<pre><code>{
   "type":"OneTime",
-  "messageText":"This is a <a>test</a> OneTime notice.",
+  "messageText":"This is a &lt;a&gt;test&lt;/a&gt; OneTime notice.",
   "cssClass":"warning"
 }
-```
+</code></pre>
 
-### Response
+<h3>
+<a id="response-5" class="anchor" href="#response-5" aria-hidden="true"><span class="octicon octicon-link"></span></a>Response</h3>
 
-```
-{
+<pre><code>{
   "id":"e835c4df-7bac-442e-ba91-17f4593dffed",
   "type":"OneTime",
-  "message":"This is a &lt;a&gt;test&lt;/a&gt; OneTime notice.",
+  "message":"This is a &amp;lt;a&amp;gt;test&amp;lt;/a&amp;gt; OneTime notice.",
   "cssClass":"warning"
   "user": {
     "id": "ae5d8b42-0110-47d6-9ad9-60f4956c12ec"
   }
 }
-```
+</code></pre>
 
-## Dismiss a notice to be delivered to a user
+<h2>
+<a id="dismiss-a-notice-to-be-delivered-to-a-user" class="anchor" href="#dismiss-a-notice-to-be-delivered-to-a-user" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dismiss a notice to be delivered to a user</h2>
 
-    DELETE /{clientId}/notices/users/{noticeId}
+<pre><code>DELETE /{clientId}/notices/users/{noticeId}
+</code></pre>
 
-### Response
+<h3>
+<a id="response-6" class="anchor" href="#response-6" aria-hidden="true"><span class="octicon octicon-link"></span></a>Response</h3>
 
-```
-Status: 204 No Content
-```
+<pre><code>Status: 204 No Content
+</code></pre>
 
-# Users API
+<h1>
+<a id="users-api" class="anchor" href="#users-api" aria-hidden="true"><span class="octicon octicon-link"></span></a>Users API</h1>
 
-The users API will provide access to resources corresponding to users.
+<p>The users API will provide access to resources corresponding to users.</p>
 
-## Get a single user
+<h2>
+<a id="get-a-single-user" class="anchor" href="#get-a-single-user" aria-hidden="true"><span class="octicon octicon-link"></span></a>Get a single user</h2>
 
-    GET /{clientId}/users/{userId}
+<pre><code>GET /{clientId}/users/{userId}
+</code></pre>
 
-### Response
+<h3>
+<a id="response-7" class="anchor" href="#response-7" aria-hidden="true"><span class="octicon octicon-link"></span></a>Response</h3>
 
-```
-Status: 200 OK
+<pre><code>Status: 200 OK
 {
   "id": "0f8fad5b-d9cb-469f-a165-70867728950e",
   "clientId": "firmwater",
@@ -252,4 +310,19 @@ Status: 200 OK
   "dateOfBirth": null,
   "expiryDateTime": "2014-01-14T04:33:35",
 }
-```
+</code></pre>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Firmwaterlms-api maintained by <a href="https://github.com/firmwater">firmwater</a></p>
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
